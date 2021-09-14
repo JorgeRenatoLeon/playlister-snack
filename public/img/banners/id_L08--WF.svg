@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="760px" height="415px" viewBox="0 0 760 415" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>id_L08--WF</title>
+    <defs>
+        <text id="text-1" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" line-spacing="30.6333973" letter-spacing="-0.05" fill="#000000">
+            <tspan x="144.644" y="366.369482">trendtext</tspan>
+        </text>
+        <filter x="-2.2%" y="-3.2%" width="104.4%" height="112.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <text id="text-3" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" line-spacing="30.6333973" letter-spacing="-0.05" fill="#000000">
+            <tspan x="517.5" y="366.369482">trendstate</tspan>
+        </text>
+        <filter x="-2.0%" y="-3.2%" width="104.0%" height="112.9%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="id_L08--WF" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="-0.369481766" width="380" height="314"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="380" y="-0.369481766" width="380" height="314"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="2.27373675e-13" y="313.369482" width="760" height="101"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="0" width="760" height="60"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="568" y="-1" width="192" height="61"></rect>
+        <text id="playlistfollowsvalue" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="232.365963">playlistfollowsvalue</tspan>
+        </text>
+        <text id="playlisternamevalue" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="164.498241">playlisternamevalue</tspan>
+        </text>
+        <text id="playlisternameurlval" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="145.209">playlisternameurlvalue</tspan>
+        </text>
+        <text id="playlisterimgurlvalu" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="125.209">playlisterimgurlvalue</tspan>
+        </text>
+        <text id="playlistfollowsvalue" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="251.655204">playlistfollowsvaluelabel</tspan>
+        </text>
+        <text id="playlistsongsvalue" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="186.787481">playlistsongsvalue</tspan>
+        </text>
+        <text id="playlistsongsvaluela" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="206.076722">playlistsongsvaluelabel</tspan>
+        </text>
+        <text id="placementpositionval" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="277.944444">placementpositionvalue</tspan>
+        </text>
+        <text id="placementpositionval" font-family="Graphik-Semibold, Graphik" font-size="15" font-weight="500" letter-spacing="-0.300000008" fill="#000000">
+            <tspan x="388" y="297.233685">placementpositionvaluelabel</tspan>
+        </text>
+        <text id="alertText1" font-family="Montserrat-SemiBold, Montserrat" font-size="30" font-weight="500" letter-spacing="-0.166666669" fill="#000000">
+            <tspan x="388" y="96.6305182">alertText1</tspan>
+        </text>
+        <g id="trendtext" fill="#000000" fill-opacity="1">
+            <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+            <use xlink:href="#text-1"></use>
+        </g>
+        <g id="trendstate" fill="#000000" fill-opacity="1">
+            <use filter="url(#filter-4)" xlink:href="#text-3"></use>
+            <use xlink:href="#text-3"></use>
+        </g>
+        <text id="L08" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" letter-spacing="-0.05" fill="#000000">
+            <tspan x="18" y="36">L08</tspan>
+        </text>
+        <g id="Group" transform="translate(91.500000, 122.618176)" fill="#000000" font-family="Graphik-Semibold, Graphik" font-weight="500">
+            <text id="playlistcoverimgurl" font-size="22" letter-spacing="-0.440000012">
+                <tspan x="0.0390001148" y="18">playlistcoverimgurl</tspan>
+            </text>
+            <text id="playlistname" font-size="28" letter-spacing="-0.560000015">
+                <tspan x="15.5920001" y="52.5123427">playlistname</tspan>
+            </text>
+            <text id="playlistspotifyurlva" font-size="15" letter-spacing="-0.300000008">
+                <tspan x="21.4000001" y="85.0246854">playlistspotifyurlvalue</tspan>
+            </text>
+            <text id="playlistgenresvalue" font-size="15" letter-spacing="-0.300000008">
+                <tspan x="30.8950001" y="115.537028">playlistgenresvalue</tspan>
+            </text>
+        </g>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="47" y="88.6305182" width="286" height="196"></rect>
+    </g>
+</svg>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="760px" height="415px" viewBox="0 0 760 415" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>id_L09--WF</title>
+    <defs>
+        <text id="text-1" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" line-spacing="30.6333973" letter-spacing="-0.05" fill="#000000">
+            <tspan x="139.007" y="354.369482">trendtext2</tspan>
+        </text>
+        <filter x="-2.0%" y="-3.2%" width="103.9%" height="112.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <text id="text-3" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" line-spacing="30.6333973" letter-spacing="-0.05" fill="#000000">
+            <tspan x="517.5" y="354.369482">trendstate</tspan>
+        </text>
+        <filter x="-2.0%" y="-3.2%" width="104.0%" height="112.9%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="id_L09--WF" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="-0.369481766" width="380" height="290"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="380" y="-0.369481766" width="380" height="290"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="2.27373675e-13" y="289.369482" width="760" height="125"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="0" width="760" height="60"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="568" y="-1" width="192" height="61"></rect>
+        <g id="Group" transform="translate(406.000000, 131.597889)" fill="#000000" font-weight="500">
+            <g id="Group-3">
+                <text id="alerttext" font-family="Graphik-Semibold, Graphik" font-size="30" letter-spacing="-0.600000016">
+                    <tspan x="0" y="25">alerttext</tspan>
+                </text>
+                <text id="trendtext1" font-family="Montserrat-SemiBold, Montserrat" font-size="20" letter-spacing="-0.111111113">
+                    <tspan x="0" y="70.9021113">trendtext1</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="trendtext2" fill="#000000" fill-opacity="1">
+            <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+            <use xlink:href="#text-1"></use>
+        </g>
+        <g id="trendstate" fill="#000000" fill-opacity="1">
+            <use filter="url(#filter-4)" xlink:href="#text-3"></use>
+            <use xlink:href="#text-3"></use>
+        </g>
+        <text id="L09" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" letter-spacing="-0.05" fill="#000000">
+            <tspan x="18" y="36">L09</tspan>
+        </text>
+        <text id="ratiovalue" font-family="Graphik-Semibold, Graphik" font-size="30" font-weight="500" letter-spacing="-0.600000016" fill="#000000">
+            <tspan x="139" y="164.548944">ratiovalue</tspan>
+        </text>
+        <text id="ratiocirclechartvalu" font-family="Graphik-Semibold, Graphik" font-size="22" font-weight="500" letter-spacing="-0.440000012" fill="#000000">
+            <tspan x="96.5" y="260.771593">ratiocirclechartvalues</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#000000" stroke-width="3" x="136.5" y="82.6305182" width="144" height="144"></rect>
+    </g>
+</svg>

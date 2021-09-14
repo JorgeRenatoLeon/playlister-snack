@@ -8,7 +8,33 @@
     min-height: 310px;
 }
 .snack-card-shadow{
-    box-shadow: 0 2px 30px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 15%);
+}
+
+.snack-card-title {
+    position: absolute;
+    left: calc(50% - 106px);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.snack-card-col{
+    border: 1px solid rgba(46, 196, 182, 0.0498781);
+}
+
+.snack-card-row{
+    border-top: 1px solid rgba(46, 196, 182, 0.0498781);
+}
+
+.value-number.text-card {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.value-text.text-card {
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .category{

@@ -103,16 +103,54 @@
                         />
                     </div>
 
-                    <div class="snack-card snack-card-shadow grad-did0001">
-                        Snack Card Gradient
+                    <div class="snack-card snack-card-shadow p-0">
+                        <div class="bg-card-layer grad-did0001 h-100 w-100">
+                            <div class="snack-card-content h-100 w-100">
+                                <div class="snack-card-title">
+                                    TOTAL VIEWS
+                                </div>
+                                <div class="row m-0 h-100">
+                                    <div class="snack-card-col col p-0">
+                                        <div class="h-75 w-100 d-flex flex-column align-items-center justify-content-center">
+                                            
+                                            <div class="value-number text-card">
+                                                2,130
+                                            </div>
+                                            <div class="value-text text-card">
+                                                THIS WEEK
+                                            </div>
+
+                                        </div>
+                                        <div class="snack-card-row h-25 w-100 d-flex flex-column align-items-center justify-content-center">
+                                            COL 1 ROW 2
+                                        </div>
+                                    </div>
+                                    <div class="snack-card-col col p-0">
+                                        <div class="row m-0 h-75 w-100 d-flex flex-column align-items-center justify-content-center">
+                                            
+                                            <div class="value-number text-card">
+                                                6,382
+                                            </div>
+                                            <div class="value-text text-card">
+                                                ALL TIMES
+                                            </div>
+
+                                        </div>
+                                        <div class="row snack-card-row m-0 h-25 w-100 d-flex flex-column align-items-center justify-content-center">
+                                            COL 2 ROW 2
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="snack-card snack-card-shadow">
+                    <div class="snack-card snack-card-shadow p-0" v-for="(svg, i) in svgs" :key="i">
+                        <img :src="svg" loading="lazy" alt="card" style="width: 100%; height: 100%">
+                    </div>
+
+                    <div class="snack-card snack-card-shadow p-0">
                         Snack Card with no Background Color
-                    </div>
-
-                    <div class="snack-card snack-card-shadow" v-for="i in 5" :key="i">
-                        <img src="https://assets.website-files.com/613b0e973a32f5789f2bf3af/613b8f73ced6a46a6ce47318_id_0001--totalviews.svg" loading="lazy" alt="card" style="width: 100%">
                     </div>
                 </div>
 
@@ -158,7 +196,27 @@ export default {
             search: '',
             selected: 0,
             tags: ['Rock', 'Pop', 'Blues', 'Dance', 'Latin'],
-            songs: ['Sinmigo', 'Todo Cambia', 'Contra Todo Pronostico', 'En Plena Calle', 'Cortocircuitos']
+            songs: ['Sinmigo', 'Todo Cambia', 'Contra Todo Pronostico', 'En Plena Calle', 'Cortocircuitos'],
+            svgs: [
+                'img/banners/id_0001--totalviews.svg',
+                'img/banners/id_0005--views-dailyAvg.svg',
+                'img/banners/id_0006--listens-dailyAvg.svg',
+                'img/banners/id_0009--views-increaseSentiment-places.svg',
+                'img/banners/id_0013--engagements-achievement.svg',
+                'img/banners/id_0017--placements-achievement-top-week.svg',
+                'img/banners/id_0021--views-to-listen-ratio.svg',
+                'img/banners/id_0025--track-vs-top3tracks-in-genrex.svg',
+                'img/banners/id_0034--notification-review-gotnew-compress.svg',
+                'img/banners/id_0034--notification-review-gotnew-fullx.svg',
+                'img/banners/id_0033--notification-newplacement-full-compress.svg',
+                'img/banners/id_0033--notification-newplacementz-full.svg',
+                'img/banners/id_0031--views-xtimes-comparedto.svg',
+                'img/banners/id_0002-totallistens.svg',
+                'img/banners/id_0003--totalreviews2.svg',
+                'img/banners/id_0004--totalplacement.svg',
+                'img/banners/id_0029--notification-placement-GotNew.svg',
+                'img/banners/id_0034--placements-xtimes-comparedto.svg',
+            ],
         }
     },
     created(){
@@ -309,7 +367,7 @@ export default {
     border-style: solid;
     border-width: 1px;
     border-color: hsla(0, 0%, 100%, 0.09);
-    border-radius: 6px;
+    border-radius: 9px;
     background-color: hsla(0, 0%, 100%, 0.06);
     box-shadow: 0 1px 30px 0 rgb(0 0 0 / 15%);
     text-align: left;
@@ -332,10 +390,12 @@ export default {
     padding: 10px;
     background-color: rgba(255,255,255,0.1);
     margin-top: auto;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 9px;
 }
 
 .main-resume {
-    background-color: rgba(0,0,0,0.6) !important;
+    background: radial-gradient(193.75% 89.93% at 50% 0%, rgba(0, 0, 0, 0.12185) 0%, rgba(0, 0, 0, 0.412722) 100%) !important;
     min-height: 170px !important;
     align-items: center;
 }

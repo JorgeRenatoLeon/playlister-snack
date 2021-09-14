@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="760px" height="415px" viewBox="0 0 760 415" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>id_L06--WF</title>
+    <defs>
+        <text id="text-1" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" line-spacing="30.6333973" letter-spacing="-0.05" fill="#000000">
+            <tspan x="329.5" y="353.369482">trendstate</tspan>
+        </text>
+        <filter x="-2.0%" y="-3.2%" width="104.0%" height="112.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="id_L06--WF" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="-0.369481766" width="760" height="415"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="0" width="760" height="60"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="568" y="-1" width="192" height="61"></rect>
+        <g id="Group" transform="translate(275.500000, 119.929463)" fill="#000000" font-weight="500">
+            <g id="Group-3">
+                <text id="alerttext1" font-family="Graphik-Semibold, Graphik" font-size="30" letter-spacing="-0.600000016">
+                    <tspan x="35" y="62">alerttext1</tspan>
+                </text>
+                <text id="alertvalue" font-family="Graphik-Semibold, Graphik" font-size="50" letter-spacing="-1.00000003">
+                    <tspan x="0" y="120.402111">alertvalue</tspan>
+                </text>
+                <text id="congratlabel1" font-family="Montserrat-SemiBold, Montserrat" font-size="20" letter-spacing="-0.111111113">
+                    <tspan x="35" y="19">congratlabel1</tspan>
+                </text>
+                <text id="alerttext2" font-family="Montserrat-SemiBold, Montserrat" font-size="26.2571977" letter-spacing="-0.145873323">
+                    <tspan x="35" y="167.402111">alerttext2</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="trendstate" fill="#000000" fill-opacity="1">
+            <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+            <use xlink:href="#text-1"></use>
+        </g>
+        <text id="L06" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" letter-spacing="-0.05" fill="#000000">
+            <tspan x="18" y="36">L06</tspan>
+        </text>
+    </g>
+</svg>
