@@ -4,11 +4,82 @@
         <div class="data-snacks-container row m-0">
             <div class="col col-30">
                 <div class="card-transparent songs-list">
-                    SONGS
-                </div>
-
-                <div class="card-transparent account-info">
-                    PROMO INFO
+                    <div class="songs-header row m-0">
+                        <div class="col p-0">
+                            <strong>Promoted Songs</strong>
+                        </div>
+                        <div class="col p-0 d-flex justify-content-end songs-header-info">
+                            Avalaible Spots: 2
+                        </div>
+                    </div>
+                    
+                    <div class="song active">
+                        <div class="song-container row m-0">
+                            <div class="col col-2 p-0 d-flex align-items-center">
+                                <img src="../assets/img/song-cover.png" alt="" width="100%">
+                            </div>
+                            <div class="col col-10">
+                                <div class="row m-0 d-flex justify-content-end song-status">
+                                    <div class="text p-0">
+                                    Status
+                                    </div> 
+                                    <div class="number p-0">
+                                        01
+                                    </div>
+                                </div>
+                                <div class="song-title">
+                                    Sinmigo
+                                </div>
+                                <div class="song-tags">
+                                    <div class="song-tags-title">
+                                        MATCHED WITH
+                                    </div>
+                                    <div class="tags row m-0">
+                                        <div class="col tag" v-for="(tag, i) in tags" :key="i">
+                                            {{tag}}
+                                        </div>
+                                        <div class="col logo">
+                                            <img src="../assets/img/spotify-logo.png" alt="logo" width="22px" height="22px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="song" v-for="(song, index) in songs" :key="index">
+                        <div class="song-container row m-0">
+                            <div class="col col-2 p-0 d-flex align-items-center">
+                                <img src="../assets/img/song-cover.png" alt="" width="100%">
+                            </div>
+                            <div class="col col-10">
+                                <div class="row m-0 d-flex justify-content-end song-status">
+                                    <div class="text p-0">
+                                    Status
+                                    </div> 
+                                    <div class="number p-0">
+                                        01
+                                    </div>
+                                </div>
+                                <div class="song-title">
+                                    {{song}}
+                                </div>
+                                <div class="song-tags">
+                                    <div class="song-tags-title">
+                                        MATCHED WITH
+                                    </div>
+                                    <div class="tags row m-0">
+                                        <div class="col tag" v-for="(tag, i) in tags" :key="i">
+                                            {{tag}}
+                                        </div>
+                                        <div class="col logo">
+                                            <img src="../assets/img/spotify-logo.png" alt="logo" width="22px" height="22px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col col-40">
@@ -66,7 +137,7 @@
 
             </div>
             <div class="col col-30">
-                <div class="card-transparent info-card songs-list">
+                <div class="card-transparent info-card">
                     <div class="info-card-content">
                         INFO CONTENT
                     </div>
@@ -74,7 +145,7 @@
                         This is the footer
                     </div>
                 </div>
-                <div class="card-transparent info-card songs-list">
+                <div class="card-transparent info-card">
                     <div class="info-card-content">
                         INFO CONTENT
                     </div>
@@ -82,7 +153,7 @@
                         This is the footer
                     </div>
                 </div>
-                <div class="card-transparent info-card songs-list">
+                <div class="card-transparent info-card">
                     <div class="info-card-content">
                         INFO CONTENT
                     </div>
@@ -102,6 +173,8 @@ export default {
     data() {
         return {
             dataSnacks: [],
+            tags: ['Rock', 'Pop', 'Blues', 'Dance', 'Latin'],
+            songs: ['Todo Cambia', 'Contra Todo Pronostico', 'En Plena Calle', 'Cortocircuitos']
         }
     },
     created(){
@@ -122,6 +195,7 @@ export default {
 
 <style>
 .principal-view {
+    background-color: black;
 }
 
 .blur-overlay {
@@ -183,6 +257,14 @@ export default {
     margin-bottom: 15px;
 }
 
+.songs-list {
+    position: sticky;
+    top: 15px;
+    padding-top: 0px !important;
+    background-color: rgba(0,0,0,0.4) !important;
+    border-width: 0px !important;
+}
+
 
 .card-transparent {
     display: -webkit-box;
@@ -233,15 +315,85 @@ export default {
 
 .main-resume {
     background-color: rgba(0,0,0,0.6) !important;
+    min-height: fit-content !important;
 }
 
 .value-text {
-    color: #808080d9;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.9rem;
 }
 
 .value-number {
     color: white;
     font-size: 32px;
     font-weight: 600;
+}
+
+.songs-header {
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+    line-height: 20px;
+}
+
+.songs-header-info{
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    line-height: 23px;
+}
+
+.song {
+    width: 100%;
+    padding: 10px;
+}
+
+.song.active{
+    background: rgba(46, 196, 182, 0.401215);
+    border-left: 4px solid #2EC4B6;
+}
+
+.song-status {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+}
+
+.song-status > .text, .number {
+    width: fit-content !important;
+}
+
+.song-status > .number {
+    margin-left: 15px;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.song-title{
+    margin-top: -15px;
+}
+
+.song-tags-title{
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 3px;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 11px;
+    max-width: fit-content !important;
+    padding: 5px 9px !important;
+    margin-left: 5px;
+    margin-top: 5px !important;
+}
+
+.logo {
+    max-width: fit-content !important;
+    margin-left: auto;
+    padding-right: 0px !important;
 }
 </style>
