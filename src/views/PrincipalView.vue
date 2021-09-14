@@ -13,67 +13,42 @@
                         </div>
                     </div>
                     
-                    <div class="song active">
+                    <div class="song" :class="selected===index? 'active' : ''" v-for="(song, index) in songs" :key="index" @click="selected=index">
                         <div class="song-container row m-0">
-                            <div class="col col-2 p-0 d-flex align-items-center">
-                                <img src="../assets/img/song-cover.png" alt="" width="100%">
-                            </div>
-                            <div class="col col-10">
-                                <div class="row m-0 d-flex justify-content-end song-status">
-                                    <div class="text p-0">
+                            
+                            <div class="row m-0 d-flex justify-content-end song-status">
+                                <div class="text p-0">
                                     Status
-                                    </div> 
-                                    <div class="number p-0">
-                                        01
-                                    </div>
-                                </div>
-                                <div class="song-title">
-                                    Sinmigo
-                                </div>
-                                <div class="song-tags">
-                                    <div class="song-tags-title">
-                                        MATCHED WITH
-                                    </div>
-                                    <div class="tags row m-0">
-                                        <div class="col tag" v-for="(tag, i) in tags" :key="i">
-                                            {{tag}}
-                                        </div>
-                                        <div class="col logo">
-                                            <img src="../assets/img/spotify-logo.png" alt="logo" width="22px" height="22px">
-                                        </div>
-                                    </div>
+                                </div> 
+                                <div class="number p-0">
+                                    {{'0'+(index+1)}}
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="song" v-for="(song, index) in songs" :key="index">
-                        <div class="song-container row m-0">
-                            <div class="col col-2 p-0 d-flex align-items-center">
-                                <img src="../assets/img/song-cover.png" alt="" width="100%">
-                            </div>
-                            <div class="col col-10">
-                                <div class="row m-0 d-flex justify-content-end song-status">
-                                    <div class="text p-0">
-                                    Status
-                                    </div> 
-                                    <div class="number p-0">
-                                        01
+                            
+                            <div class="row song-content">
+                                <div class="col col-2 p-0 d-flex align-items-center">
+                                    <div class="song-cover">
+                                        <!-- <img src="../assets/img/song-cover.png" alt="" width="100%"> -->
+                                        <img class="play-song" src="../assets/svg/mini-play-icon.svg" alt="play" width="25px" height="25px">
                                     </div>
                                 </div>
-                                <div class="song-title">
-                                    {{song}}
-                                </div>
-                                <div class="song-tags">
-                                    <div class="song-tags-title">
-                                        MATCHED WITH
+                                <div class="col col-10 song-info">
+                                    <div class="song-title">
+                                        {{song}}
                                     </div>
-                                    <div class="tags row m-0">
-                                        <div class="col tag" v-for="(tag, i) in tags" :key="i">
-                                            {{tag}}
+                                    <div class="song-tags">
+                                        <div class="song-tags-title">
+                                            MATCHED WITH
                                         </div>
-                                        <div class="col logo">
-                                            <img src="../assets/img/spotify-logo.png" alt="logo" width="22px" height="22px">
+                                        <div class="tags row m-0">
+                                            <div class="col tag" v-for="(tag, i) in tags" :key="i">
+                                                {{tag}}
+                                            </div>
+                                            <div class="col logo">
+                                                <a href="#">
+                                                    <img src="../assets/img/spotify-logo.png" alt="logo" width="22px" height="22px">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +95,13 @@
                 </div>
 
                 <div class="search-section">
-                    <img src="../assets/img/search-bar.jpg" loading="lazy" alt="search" style="width: 100%">
+                    <b-form-input
+                        id="input-search"
+                        v-model="search"
+                        class="search-input"
+                        type="text"
+                        placeholder="Search"
+                    />
                 </div>
 
                 <div class="snack-card snack-card-shadow grad-did0001">
@@ -142,7 +123,7 @@
                         INFO CONTENT
                     </div>
                     <div class="info-card-footer">
-                        This is the footer
+                        trend text area
                     </div>
                 </div>
                 <div class="card-transparent info-card">
@@ -150,7 +131,7 @@
                         INFO CONTENT
                     </div>
                     <div class="info-card-footer">
-                        This is the footer
+                        trend text area
                     </div>
                 </div>
                 <div class="card-transparent info-card">
@@ -158,7 +139,7 @@
                         INFO CONTENT
                     </div>
                     <div class="info-card-footer">
-                        This is the footer
+                        trend text area
                     </div>
                 </div>
             </div>
@@ -173,8 +154,10 @@ export default {
     data() {
         return {
             dataSnacks: [],
+            search: '',
+            selected: 0,
             tags: ['Rock', 'Pop', 'Blues', 'Dance', 'Latin'],
-            songs: ['Todo Cambia', 'Contra Todo Pronostico', 'En Plena Calle', 'Cortocircuitos']
+            songs: ['Sinmigo', 'Todo Cambia', 'Contra Todo Pronostico', 'En Plena Calle', 'Cortocircuitos']
         }
     },
     created(){
@@ -189,7 +172,8 @@ export default {
             })
         })
     },
-
+    computed:{
+    },
 }
 </script>
 
@@ -253,7 +237,7 @@ export default {
 
 .search-section{
     position: sticky;
-    top: 10px;
+    top: 15px;
     margin-bottom: 15px;
 }
 
@@ -261,7 +245,9 @@ export default {
     position: sticky;
     top: 15px;
     padding-top: 0px !important;
-    background-color: rgba(0,0,0,0.4) !important;
+    padding-bottom: 0px !important;
+    background: rgba(18, 22, 33, 0.2);
+    background-color: rgba(18, 22, 33, 0.2) !important;
     border-width: 0px !important;
 }
 
@@ -320,13 +306,15 @@ export default {
 
 .value-text {
     color: rgba(255,255,255,0.4);
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
 }
 
 .value-number {
     color: white;
     font-size: 32px;
     font-weight: 600;
+    font-family: Graphik, sans-serif;
 }
 
 .songs-header {
@@ -344,13 +332,42 @@ export default {
 }
 
 .song {
+    transition: 1s;
     width: 100%;
     padding: 10px;
+    cursor: pointer;
 }
 
 .song.active{
+    transition: 0.3s;
     background: rgba(46, 196, 182, 0.401215);
     border-left: 4px solid #2EC4B6;
+}
+
+.song:hover{
+    background: rgba(46, 196, 182, 0.401215);
+}
+
+.song:last-child{
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+.song-cover{
+    min-width: 100%;
+    aspect-ratio: auto 50 / 50;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-song{
+    transition: 0.5s;
+}
+
+.play-song:hover{
+    opacity: 0.7;
 }
 
 .song-status {
@@ -370,24 +387,36 @@ export default {
     font-weight: 400;
 }
 
+.song-content{
+    margin: 0px;
+    margin-top: -15px !important;
+}
+
+.song-info{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
 .song-title{
-    margin-top: -15px;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 .song-tags-title{
     font-size: 10px;
     color: rgba(255,255,255,0.4);
-    margin-bottom: 3px;
+    margin-bottom: 6px;
+    margin-top: 8px;
 }
 
 .tag {
     font-size: 12px;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 11px;
+    border-radius: 20px;
     max-width: fit-content !important;
     padding: 5px 9px !important;
-    margin-left: 5px;
+    margin-right: 5px;
     margin-top: 5px !important;
 }
 
@@ -395,5 +424,13 @@ export default {
     max-width: fit-content !important;
     margin-left: auto;
     padding-right: 0px !important;
+}
+
+.search-input {
+    color: rgba(255, 255, 255, 0.4) !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    border: 0 !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 0 0 !important;
 }
 </style>
