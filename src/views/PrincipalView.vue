@@ -16,7 +16,7 @@
                     <div class="song" :class="selected===index? 'active' : ''" v-for="(song, index) in songs" :key="index" @click="selected=index">
                         <div class="song-container row m-0">
                             
-                            <div class="row m-0 d-flex justify-content-end song-status">
+                            <div class="row m-0 p-0 d-flex justify-content-end song-status">
                                 <div class="text p-0">
                                     Status
                                 </div> 
@@ -25,11 +25,11 @@
                                 </div>
                             </div>
                             
-                            <div class="row song-content">
+                            <div class="row p-0 song-content">
                                 <div class="col col-2 p-0 d-flex align-items-center">
                                     <div class="song-cover">
                                         <!-- <img src="../assets/img/song-cover.png" alt="" width="100%"> -->
-                                        <img class="play-song" src="../assets/svg/mini-play-icon.svg" alt="play" width="25px" height="25px">
+                                        <img class="play-song" src="../assets/svg/mini-play-icon.svg" alt="play" width="60%" height="60%">
                                     </div>
                                 </div>
                                 <div class="col col-10 song-info">
@@ -58,62 +58,62 @@
                 </div>
             </div>
             <div class="col col-40">
-
-                <div class="main-resume snack-card snack-card-shadow row m-0 mb-4 py-4">
-                    <div class="col col-3">
-                        <div class="value-number">
-                            232
+                <div class="section-center row m-0 d-flex justify-content-center">
+                    <div class="main-resume snack-card snack-card- row m-0 mb-4 py-4 ">
+                        <div class="col col-3">
+                            <div class="value-number">
+                                232
+                            </div>
+                            <div class="value-text">
+                                Views
+                            </div>
                         </div>
-                        <div class="value-text">
-                            Views
+                        <div class="col col-3">
+                            <div class="value-number">
+                                51
+                            </div>
+                            <div class="value-text">
+                                Listens
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <div class="value-number">
+                                9
+                            </div>
+                            <div class="value-text">
+                                Reviews
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <div class="value-number">
+                                5
+                            </div>
+                            <div class="value-text">
+                            Placements 
+                            </div>
                         </div>
                     </div>
-                    <div class="col col-3">
-                        <div class="value-number">
-                            51
-                        </div>
-                        <div class="value-text">
-                            Listens
-                        </div>
+
+                    <div class="search-section p-0">
+                        <b-form-input
+                            id="input-search"
+                            v-model="search"
+                            class="search-input"
+                            type="text"
+                        />
                     </div>
-                    <div class="col col-3">
-                        <div class="value-number">
-                            9
-                        </div>
-                        <div class="value-text">
-                            Reviews
-                        </div>
+
+                    <div class="snack-card snack-card-shadow grad-did0001">
+                        Snack Card Gradient
                     </div>
-                    <div class="col col-3">
-                        <div class="value-number">
-                            5
-                        </div>
-                        <div class="value-text">
-                           Placements 
-                        </div>
+
+                    <div class="snack-card snack-card-shadow">
+                        Snack Card with no Background Color
                     </div>
-                </div>
 
-                <div class="search-section">
-                    <b-form-input
-                        id="input-search"
-                        v-model="search"
-                        class="search-input"
-                        type="text"
-                        placeholder="Search"
-                    />
-                </div>
-
-                <div class="snack-card snack-card-shadow grad-did0001">
-                    Snack Card Gradient
-                </div>
-
-                <div class="snack-card snack-card-shadow">
-                    Snack Card with no Background Color
-                </div>
-
-                <div class="snack-card snack-card-shadow" v-for="i in 5" :key="i">
-                    <img src="https://assets.website-files.com/613b0e973a32f5789f2bf3af/613b8f73ced6a46a6ce47318_id_0001--totalviews.svg" loading="lazy" alt="card" style="width: 100%">
+                    <div class="snack-card snack-card-shadow" v-for="i in 5" :key="i">
+                        <img src="https://assets.website-files.com/613b0e973a32f5789f2bf3af/613b8f73ced6a46a6ce47318_id_0001--totalviews.svg" loading="lazy" alt="card" style="width: 100%">
+                    </div>
                 </div>
 
             </div>
@@ -149,6 +149,7 @@
 
 <script>
 import axios from 'axios'
+import $ from 'jquery';
 
 export default {
     data() {
@@ -171,6 +172,36 @@ export default {
                 this.dataSnacks[0].content = res.data;
             })
         })
+        
+        $.fn.visible = function() {
+            
+            var $t            = $(this),
+                $w            = $(window),
+                viewTop       = $w.scrollTop(),
+                _top          = $t.offset().top;
+            
+            return (viewTop >= _top);
+
+        };
+    },
+    mounted(){
+
+        var allMods = $(".search-section");
+
+        document.addEventListener('scroll', function () {
+            
+            allMods.each(function(i, el) {
+                var eli = $(el);
+
+                if (eli.visible(true)) {
+                    eli.addClass("no-border-radius");
+                }
+                else {
+                    eli.removeClass("no-border-radius");
+                }
+            });
+            
+        }, true /*Capture event*/);
     },
     computed:{
     },
@@ -237,8 +268,10 @@ export default {
 
 .search-section{
     position: sticky;
-    top: 15px;
+    top: 0px;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .songs-list {
@@ -286,6 +319,7 @@ export default {
 .info-card {
     padding-bottom: 0px;
     padding-top: 10px;
+    min-height: 200px;
 }
 
 .info-card-content {
@@ -297,17 +331,20 @@ export default {
     width: 100%;
     padding: 10px;
     background-color: rgba(255,255,255,0.1);
+    margin-top: auto;
 }
 
 .main-resume {
     background-color: rgba(0,0,0,0.6) !important;
-    min-height: fit-content !important;
+    min-height: 170px !important;
+    align-items: center;
 }
 
 .value-text {
     color: rgba(255,255,255,0.4);
-    font-size: 0.7rem;
+    font-size: 10px;
     text-transform: uppercase;
+    letter-spacing: normal;
 }
 
 .value-number {
@@ -329,6 +366,7 @@ export default {
     color: rgba(255,255,255,0.4);
     font-weight: 600;
     line-height: 23px;
+    letter-spacing: normal;
 }
 
 .song {
@@ -374,6 +412,7 @@ export default {
     font-size: 10px;
     font-weight: 600;
     color: rgba(255,255,255,0.4);
+    letter-spacing: normal;
 }
 
 .song-status > .text, .number {
@@ -388,7 +427,7 @@ export default {
 }
 
 .song-content{
-    margin: 0px;
+    margin: 0px !important;
     margin-top: -15px !important;
 }
 
@@ -407,6 +446,7 @@ export default {
     color: rgba(255,255,255,0.4);
     margin-bottom: 6px;
     margin-top: 8px;
+    letter-spacing: normal;
 }
 
 .tag {
@@ -418,6 +458,7 @@ export default {
     padding: 5px 9px !important;
     margin-right: 5px;
     margin-top: 5px !important;
+    letter-spacing: normal;
 }
 
 .logo {
@@ -432,5 +473,11 @@ export default {
     border: 0 !important;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 0 0 !important;
+    height: 40px;
+    max-width: 760px;
+}
+
+.no-border-radius > .search-input{
+    border-radius: 0px !important;
 }
 </style>
