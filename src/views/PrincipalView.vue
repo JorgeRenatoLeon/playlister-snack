@@ -105,13 +105,23 @@
 
                     <div class="snack-card snack-card-shadow p-0">
                         <div class="bg-card-layer grad-did0001 h-100 w-100">
+                            <div class="snack-card-bg-items">
+                                <div class="snack-card-bg-items-content">
+                                    <img src="../assets/svg/first-card/Oval.svg" alt="Oval" height="100%" style="top:0%;z-index: 899;opacity:0.35">
+                                    <img src="../assets/svg/first-card/Oval-1.svg" alt="Oval1" height="72%" style="top:14%;z-index: 900">
+                                    <img src="../assets/svg/first-card/Oval-2.svg" alt="Oval2" height="56%" style="top:22%;z-index: 901">
+                                    <img src="../assets/svg/first-card/Oval-3.svg" alt="Oval3" height="36%" style="top:32%;z-index: 902">
+                                    <img src="../assets/svg/first-card/Oval-4.svg" alt="Oval4" height="16%" style="top:42%;z-index: 903">
+                                    <img src="../assets/svg/first-card/VS.svg" alt="VS" height="10%" style="top:45%;z-index: 904;opacity:1">
+                                </div>
+                            </div>
                             <div class="snack-card-content h-100 w-100">
                                 <div class="snack-card-title">
                                     TOTAL VIEWS
                                 </div>
                                 <div class="row m-0 h-100">
                                     <div class="snack-card-col col p-0">
-                                        <div class="h-75 w-100 d-flex flex-column align-items-center justify-content-center">
+                                        <div class="h-70 w-100 d-flex flex-column align-items-center justify-content-center">
                                             
                                             <div class="value-number text-card">
                                                 2,130
@@ -121,12 +131,17 @@
                                             </div>
 
                                         </div>
-                                        <div class="snack-card-row h-25 w-100 d-flex flex-column align-items-center justify-content-center">
-                                            COL 1 ROW 2
+                                        <div class="snack-card-row h-30 w-100 d-flex flex-column align-items-center justify-content-center">
+                                            <div class="value-number text-footer-card">
+                                                12.5%
+                                            </div>
+                                            <div class="value-text text-footer-card">
+                                                more than last week
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="snack-card-col col p-0">
-                                        <div class="row m-0 h-75 w-100 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="col p-0">
+                                        <div class="h-70 w-100 d-flex flex-column align-items-center justify-content-center">
                                             
                                             <div class="value-number text-card">
                                                 6,382
@@ -136,8 +151,13 @@
                                             </div>
 
                                         </div>
-                                        <div class="row snack-card-row m-0 h-25 w-100 d-flex flex-column align-items-center justify-content-center">
-                                            COL 2 ROW 2
+                                        <div class="snack-card-row m-0 h-30 w-100 d-flex flex-column align-items-center justify-content-center">
+                                            <div class="value-number text-footer-card">
+                                                6,9%
+                                            </div>
+                                            <div class="value-text text-footer-card">
+                                                increase in the last 7 days
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

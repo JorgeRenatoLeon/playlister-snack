@@ -11,20 +11,50 @@
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 15%);
 }
 
+.bg-card-layer{
+    position: relative;
+}
+
 .snack-card-title {
     position: absolute;
-    left: calc(50% - 106px);
-    font-size: 30px;
+    width: 100%;
+    font-size: 25px;
     font-weight: 600;
     line-height: 1.5;
+    top: 20px;
 }
 
 .snack-card-col{
-    border: 1px solid rgba(46, 196, 182, 0.0498781);
+    background: radial-gradient(161.06% 99.7% at 50% 0%, rgba(91, 228, 220, 0.260493) 0%, rgba(46, 196, 182, 0.0001) 100%);
 }
 
 .snack-card-row{
-    border-top: 1px solid rgba(46, 196, 182, 0.0498781);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.0001) -15.96%, rgba(255, 255, 255, 0.220717) 99.7%);
+}
+
+.snack-card-bg-items{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+
+.snack-card-bg-items-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.snack-card-bg-items-content > * {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    opacity: 0.17;
+}
+
+.snack-card-content{
+    position: relative;
+    z-index: 800;
 }
 
 .value-number.text-card {
@@ -35,6 +65,18 @@
 .value-text.text-card {
     font-size: 15px;
     font-weight: 600;
+}
+
+.value-number.text-footer-card {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.value-text.text-footer-card {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    text-transform: none;
 }
 
 .category{
@@ -72,6 +114,13 @@
 }
 .card-negative{
 
+}
+
+.h-70{
+    min-height: 70%;
+}
+.h-30{
+    min-height: 30%;
 }
 
 
