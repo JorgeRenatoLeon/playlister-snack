@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="760px" height="415px" viewBox="0 0 760 415" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>id_L04--WF</title>
+    <defs>
+        <text id="text-1" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" line-spacing="30.6333973" letter-spacing="-0.05" fill="#000000">
+            <tspan x="517.5" y="354.369482">trendstate</tspan>
+        </text>
+        <filter x="-2.0%" y="-3.2%" width="104.0%" height="112.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="id_L04--WF" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="-0.369481766" width="380" height="415"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="380" y="-0.369481766" width="380" height="415"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="0" y="0" width="760" height="60"></rect>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="568" y="-1" width="192" height="61"></rect>
+        <text id="thisweekvalue" font-family="Graphik-Semibold, Graphik" font-size="30" font-weight="500" letter-spacing="-0.600000016" fill="#000000">
+            <tspan x="90.4750001" y="128.097889">thisweekvalue</tspan>
+        </text>
+        <text id="songcover1" font-family="Graphik-Semibold, Graphik" font-size="30" font-weight="500" letter-spacing="-0.600000016" fill="#000000">
+            <tspan x="110.245" y="218.263676">songcover1</tspan>
+        </text>
+        <text id="thisweeklabel" font-family="Montserrat-SemiBold, Montserrat" font-size="26.2571977" font-weight="500" letter-spacing="-0.145873323" fill="#000000">
+            <tspan x="97.5381958" y="309.163148">thisweeklabel</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="65.5326296" y="153.763676" width="249" height="110"></rect>
+        <text id="totalvalue" font-family="Graphik-Semibold, Graphik" font-size="30" font-weight="500" letter-spacing="-0.600000016" fill="#000000">
+            <tspan x="500.715" y="128.097889">totalvalue</tspan>
+        </text>
+        <text id="totalvaluelabel" font-family="Montserrat-SemiBold, Montserrat" font-size="26.2571977" font-weight="500" letter-spacing="-0.145873323" fill="#000000">
+            <tspan x="471.329827" y="309.163148">totalvaluelabel</tspan>
+        </text>
+        <g id="trendstate" fill="#000000" fill-opacity="1">
+            <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+            <use xlink:href="#text-1"></use>
+        </g>
+        <text id="L04" font-family="Montserrat-SemiBold, Montserrat" font-size="19" font-weight="500" letter-spacing="-0.05" fill="#000000">
+            <tspan x="18" y="36">L04</tspan>
+        </text>
+        <text id="songcover2" font-family="Graphik-Semibold, Graphik" font-size="30" font-weight="500" letter-spacing="-0.600000016" fill="#000000">
+            <tspan x="490.048685" y="218.263676">songcover2</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="447.766315" y="153.763676" width="249" height="110"></rect>
+    </g>
+</svg>
