@@ -104,24 +104,98 @@
                         />
                     </div>
 
-                    <div class="snack-card snack-card-shadow p-0">
-                        <div class="bg-card-layer grad-did0019 h-100 w-100">
+                    <div class="base snack-card snack-card-shadow p-0">
+                        <div class="mood bg-card-layer grad-did0019 w-100">
                             <div class="snack-card-bg-items">
                                 <div class="snack-card-bg-items-content">
-                                    <div style="width: 94%; height: 80%;top:20%;left:3%;z-index: 204;opacity:0.37;background: url('/svg/0019-card/chat-bubble.svg') no-repeat; background-size: 100% auto"/>
-                                    <img src="../assets/svg/0019-card/rectangle.svg" alt="VS" height="80%" style="top:10%; left: 10%;z-index: 205;opacity:0.37;width: fit-content">
+                                    <div style="width: 94%; height: 80%;top:62px;left:3%;z-index: 204;opacity:0.37;background: url('/svg/0019-card/chat-bubble.svg') no-repeat; background-size: 100% auto"/>
+                                    <img src="../assets/svg/0019-card/rectangle.svg" alt="VS" height="186px" style="top:31px; left: 10%;z-index: 205;opacity:0.37;width: fit-content">
                                 </div>
                             </div>
-                            <div class="snack-card-content h-100 w-100">
-                                <div class="row m-0 h-25 d-flex align-items-center">
+                            <div class="data snack-card-content w-100 d-flex flex-column">
+                                <div class="first-section row m-0 d-flex align-items-center">
                                     YOU’VE GOT A NEW REVIEW!
                                 </div>
-                                <div class="row m-0 h-50 d-flex align-items-center">
-                                    Hey. Nice Song. I like the melody, but I feel it a bit commercial for us. Thanks!
+                                <div class="second-section d-flex flex-column">
+                                    <div class="review-message">
+                                        Hey. Nice Song. I like the melody, but I feel it a bit commercial for us. Thanks!
+                                    </div>
+                                    <div class="review-user mt-4 d-flex">
+                                        <div class="user-name" style="line-height: 28px">
+                                            Island Beats
+                                        </div>
+                                        <div class="spotify-logo d-flex align-items-center" style="margin-left: 5px">
+                                            <img src="../assets/img/spotify-logo.png" alt="logo" width="14px" height="14px">
+                                        </div>
+                                        <div class="user-rating" style="margin-left: auto">
+                                            <b-form-rating id="rating-inline" inline disabled icon-empty="star-fill" value="3"></b-form-rating>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="row m-0 h-25 d-flex align-items-center">
-                                    8 MINS. AGO
+                                <div class="third-section d-flex">
+                                    <div class="timestamp p-0 w-auto d-flex align-items-center">
+                                        8 MINS. AGO
+                                    </div>
+                                    <div class="more-info w-auto d-flex align-items-center">
+                                        <b-button v-b-toggle.collapse-1 class="no-button p-0">
+                                            <img src="../assets/svg/arrow-down.svg" alt="arrow" width="25px" height="25px" style="cursor: pointer">
+                                        </b-button>
+                                    </div>
                                 </div>
+                                <b-collapse id="collapse-1" class="expanded p-0" style="transition: 0.5s">
+                                    <div class="content">
+                                        <div class="d-flex flex-column">
+                                            <div class="review d-flex flex-column py-2">
+                                                Artist deliver a vibrant performance that is full of confidence
+                                                <b-form-rating id="rating-inline" inline disabled value="4"></b-form-rating>
+                                            </div>
+                                            <div class="review d-flex flex-column py-2">
+                                                The song has a professional approach to recording and production
+                                                <b-form-rating id="rating-inline" inline disabled value="2.5"></b-form-rating>
+                                            </div>
+                                            <div class="review d-flex flex-column py-2">
+                                                The song's style is in great demand commercially
+                                                <b-form-rating id="rating-inline" inline disabled value="3.5"></b-form-rating>
+                                            </div>
+                                            <div class="review-tags d-flex py-2">
+                                                <div class="d-flex flex-column">
+                                                    <div class="title-container">
+                                                        <div class="tags-title">
+                                                            Vocals
+                                                        </div>
+                                                    </div>
+                                                    <div class="title-container mt-2">
+                                                        <div class="tags-title">
+                                                            On the artist
+                                                        </div>
+                                                    </div>
+                                                    <div class="title-container mt-2">
+                                                        <div class="tags-title">
+                                                            Lyrics
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <div class="reviews d-flex">
+                                                        <div class="tag" v-for="(tag, i) in tags" :key="i">
+                                                            {{tag}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews d-flex mt-2">
+                                                        <div class="tag" v-for="(tag, i) in tags" :key="i">
+                                                            {{tag}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="reviews d-flex mt-2">
+                                                        <div class="tag" v-for="(tag, i) in tags" :key="i">
+                                                            {{tag}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </b-collapse>
                             </div>
                         </div>
                     </div>
@@ -129,6 +203,10 @@
 
                     <div class="snack-card snack-card-shadow p-0">
                         <img src="img/banners/id_0034--notification-review-gotnew-compress.svg" loading="lazy" alt="card" style="width: 100%; height: 100%">
+                    </div>
+
+                    <div class="snack-card snack-card-shadow p-0">
+                        <img src="img/banners/id_0034--notification-review-gotnew-fullx.svg" loading="lazy" alt="card" style="width: 100%; height: 100%">
                     </div>
 
                     <div class="snack-card snack-card-shadow p-0">
