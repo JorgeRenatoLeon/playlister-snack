@@ -2,6 +2,7 @@
     <div class="principal-view">
         <div class="blur-overlay"/>
         <div class="data-snacks-container row m-0">
+            <Login v-on:login="login($event)" :user="user"/>
             <div class="col col-30">
                 <div class="card-transparent songs-list">
                     <div class="songs-header row m-0">
@@ -104,6 +105,33 @@
                     </div>
 
                     <div class="snack-card snack-card-shadow p-0">
+                        <div class="bg-card-layer grad-did0019 h-100 w-100">
+                            <div class="snack-card-bg-items">
+                                <div class="snack-card-bg-items-content">
+                                    <div style="width: 94%; height: 80%;top:20%;left:3%;z-index: 204;opacity:0.37;background: url('/svg/0019-card/chat-bubble.svg') no-repeat; background-size: 100% auto"/>
+                                    <img src="../assets/svg/0019-card/rectangle.svg" alt="VS" height="80%" style="top:10%; left: 10%;z-index: 205;opacity:0.37;width: fit-content">
+                                </div>
+                            </div>
+                            <div class="snack-card-content h-100 w-100">
+                                <div class="row m-0 h-25 d-flex align-items-center">
+                                    YOU’VE GOT A NEW REVIEW!
+                                </div>
+                                <div class="row m-0 h-50 d-flex align-items-center">
+                                    Hey. Nice Song. I like the melody, but I feel it a bit commercial for us. Thanks!
+                                </div>
+                                <div class="row m-0 h-25 d-flex align-items-center">
+                                    8 MINS. AGO
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="snack-card snack-card-shadow p-0">
+                        <img src="img/banners/id_0034--notification-review-gotnew-compress.svg" loading="lazy" alt="card" style="width: 100%; height: 100%">
+                    </div>
+
+                    <div class="snack-card snack-card-shadow p-0">
                         <div class="bg-card-layer grad-did0001 h-100 w-100">
                             <div class="snack-card-bg-items">
                                 <div class="snack-card-bg-items-content">
@@ -169,9 +197,9 @@
                         <img :src="svg" loading="lazy" alt="card" style="width: 100%; height: 100%">
                     </div>
 
-                    <div class="snack-card snack-card-shadow p-0">
+                    <!-- <div class="snack-card snack-card-shadow p-0">
                         Snack Card with no Background Color
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -208,8 +236,10 @@
 <script>
 import axios from 'axios'
 import $ from 'jquery';
+import Login from '../components/Login.vue';
 
 export default {
+  components: { Login },
     data() {
         return {
             dataSnacks: [],
@@ -219,24 +249,45 @@ export default {
             songs: ['Sinmigo', 'Todo Cambia', 'Contra Todo Pronostico', 'En Plena Calle', 'Cortocircuitos'],
             svgs: [
                 'img/banners/id_0001--totalviews.svg',
-                'img/banners/id_0005--views-dailyAvg.svg',
-                'img/banners/id_0006--listens-dailyAvg.svg',
-                'img/banners/id_0009--views-increaseSentiment-places.svg',
-                'img/banners/id_0013--engagements-achievement.svg',
-                'img/banners/id_0017--placements-achievement-top-week.svg',
-                'img/banners/id_0021--views-to-listen-ratio.svg',
-                'img/banners/id_0025--track-vs-top3tracks-in-genrex.svg',
-                'img/banners/id_0034--notification-review-gotnew-compress.svg',
-                'img/banners/id_0034--notification-review-gotnew-fullx.svg',
-                'img/banners/id_0033--notification-newplacement-full-compress.svg',
-                'img/banners/id_0033--notification-newplacementz-full.svg',
-                'img/banners/id_0031--views-xtimes-comparedto.svg',
-                'img/banners/id_0002-totallistens.svg',
-                'img/banners/id_0003--totalreviews2.svg',
-                'img/banners/id_0004--totalplacement.svg',
-                'img/banners/id_0029--notification-placement-GotNew.svg',
-                'img/banners/id_0034--placements-xtimes-comparedto.svg',
+                // 'img/banners/id_0005--views-dailyAvg.svg',
+                // 'img/banners/id_0006--listens-dailyAvg.svg',
+                // 'img/banners/id_0009--views-increaseSentiment-places.svg',
+                // 'img/banners/id_0013--engagements-achievement.svg',
+                // 'img/banners/id_0017--placements-achievement-top-week.svg',
+                // 'img/banners/id_0021--views-to-listen-ratio.svg',
+                // 'img/banners/id_0025--track-vs-top3tracks-in-genrex.svg',
+                // 'img/banners/id_0034--notification-review-gotnew-compress.svg',
+                // 'img/banners/id_0034--notification-review-gotnew-fullx.svg',
+                // 'img/banners/id_0033--notification-newplacement-full-compress.svg',
+                // 'img/banners/id_0033--notification-newplacementz-full.svg',
+                // 'img/banners/id_0031--views-xtimes-comparedto.svg',
+                // 'img/banners/id_0002-totallistens.svg',
+                // 'img/banners/id_0003--totalreviews2.svg',
+                // 'img/banners/id_0004--totalplacement.svg',
+                // 'img/banners/id_0029--notification-placement-GotNew.svg',
+                // 'img/banners/id_0034--placements-xtimes-comparedto.svg',
             ],
+            js_appkey_header: 'x-app-key',
+            js_appkey_value: '7945643DACBA4335B27300796E8C392A',
+            js_auth_cookie: 'datafx_token_7945643DACBA4335B27300796E8C392A',
+            // activeTrack: null,
+            appSettings: {},
+            followerTiers: [],
+            root: 'https://api.playlister.club',
+            loading: true,
+            autoLoadingOnRequest: true,
+            addTrackInfo: null,
+            addTrackEvent: null,
+            addTrackPlaylist: null,
+            shadowBannedUsers: [],
+            unreadMessageCount: 0,
+            initiateChatUser: null,
+            shareTrackWithUser: null,
+            timeoutId: null,
+            user: null,
+            remoteDevMode: false,
+            musicGenres: [],
+            reauthenticationError: null,
         }
     },
     created(){
@@ -283,6 +334,218 @@ export default {
     },
     computed:{
     },
+    methods: {
+        async login(credentials){
+            console.log(credentials)
+            this.$emit('login', credentials)
+            var response = await this.logInUser(credentials.email, credentials.password)
+            console.log(response);
+        },
+        async getData(url, myparams, myheaders) {
+            this.loading = true;
+            this.$emit('loadingUpdated', this.loading);
+            const req = await this.getDataNL(url, myparams, myheaders);
+            this.loading = false;
+            this.$emit('loadingUpdated', this.loading);
+            return req;
+        },
+        async getDataNL(url, myparams, myheaders) {
+            // getData no loader
+            let myurl = url;
+            if (url.indexOf('https://') != 0) {
+                myurl = this.root + url;
+            }
+            let reqheaders = myheaders;
+            if (!myheaders) {
+                reqheaders = { headers: this.getAuthHeaders() };
+            }
+            if (myparams) {
+                reqheaders.params = myparams;
+            }
+            const req = await new Promise((resolve, reject) => {
+                this.$http.get(
+                myurl,
+                reqheaders,
+                ).then((response) => {
+                // success callback
+                resolve(response.json());
+                }, (error) => {
+                // error callback
+                console.warn(error);
+                reject(error);
+                // return error;
+                });
+            });
+            return req;
+        },
+        getAuthHeaders(token) {
+            if (!token) token = this.$cookie.get(this.js_auth_cookie);
+            // we configure the headers only one time using ajax setup
+            // Create an Initialize .js and include it in every page or call in every page that requires authentication.
+            const headers = {};
+            headers[this.js_appkey_header] = this.js_appkey_value;
+            headers['x-auth-token'] = token;
+
+            return headers;
+        },
+        async logInUser(email, pwd) {
+            const deferred = $.Deferred();
+            const hash = btoa(`${email}:${pwd}`);
+            const auth_hash = `Basic ${hash}`;
+            const myheaders = {};
+            myheaders.Authorization = auth_hash;
+            myheaders[this.js_appkey_header] = this.js_appkey_value;
+
+            const userInfo = await this.getData(
+                '/pc_users/LoginWithCredentialsAndCookie/PlaylisterClub', // url
+                null, // params
+                { headers: myheaders, withCredentials: true }, // headers
+            );
+            if (userInfo.token) {
+                this.$cookie.set(this.js_auth_cookie, userInfo.token, { expires: 7, path: '/' });
+
+                this.initSiteSettings(userInfo.token);
+                deferred.resolve(userInfo);
+            } else {
+                deferred.reject(userInfo);
+            }
+            return deferred;
+        },
+        async initSiteSettings() {
+            const myv = this;
+
+            myv.updateGlobalLoggedInUser().then(async (user) => {
+                if (user && user.Id) {
+                const userStats = await this.getUserStats(user.Id);
+                if (typeof (userStats.UserTier) !== 'undefined') {
+                    user.UserTier = userStats.UserTier.Value;
+                    user.UserTierName = userStats.UserTier.Description;
+                }
+
+                user.Stats = userStats;
+                user.stats = userStats;
+                const userGenres = await this.getData(
+                    '/data/pc/playlists/getusermaingenres', null, null,
+                );
+                user.UserGenres = userGenres;
+                const followerTiersResponse = await this.getData(
+                    '/data/pc/playlists/getfollowertiers', null, null,
+                );
+
+                const followerTiers = [];
+                followerTiersResponse.forEach((tier) => {
+                    followerTiers[followerTiers.length] = tier;
+                });
+                myv.followerTiers = followerTiers;
+
+                const activitityTiersResponse = await this.getData(
+                    '/data/pc/playlists/getactivitytiers', null, null,
+                );
+                const activityTiers = [];
+                activitityTiersResponse.forEach((tier) => {
+                    activityTiers[activityTiers.length] = tier;
+                });
+
+                myv.activityTiers = activityTiers;
+
+                myv.user = user;
+                } else {
+                myv.user = null;
+                }
+            });
+            this.loadMusicGenres();
+
+            this.getAppSettings();
+
+        },
+        async getUserStats(userId) {
+            const userStatsResponse = await this.getData(
+                '/data/pc/playlists/getuserstats', { context: userId, compress: true }, null,
+            );
+            const userStats = {};
+            userStatsResponse.forEach((item) => {
+                userStats[item.Type] = {
+                Value: item.Value, Period: item.PeriodValue, Description: item.Description, MetricLevel: item.MetricLevel,
+                };
+            });
+            return userStats;
+            },
+            async updateGlobalLoggedInUser() {
+            const myv = this;
+            sessionStorage.removeItem('current_user');
+            const deferred = $.Deferred();
+            myv.getCurrentUser((user) => {
+                this.user = user;
+                this.$emit('userUpdated', user);
+                deferred.resolve(user);
+            });
+            return deferred;
+        },
+        async getCurrentUser(callback) {
+            const emptyuser = {
+                Id: null, Name: null, Image: null, SpotifyArtistId: null, email: null, UserType: null, Phone: null, EmailVerified: null, SMSNotify: null, PCAuthenticated: null, Genres: null,
+            };
+            if (typeof (this.$cookie.get(this.js_auth_cookie)) === 'undefined') {
+                sessionStorage.removeItem('current_user');
+                callback(emptyuser);
+            } else if (sessionStorage.getItem('current_user') && sessionStorage.getItem('current_user') != 'undefined') {
+                const tempuser = JSON.parse(sessionStorage.getItem('current_user'));
+                if (typeof (tempuser.Id) !== 'undefined') {
+                callback(tempuser);
+                } else {
+                callback(emptyuser);
+                }
+            } else {
+                try {
+                const userInfo = await this.getData(
+                    '/pc_users/GetLoginUser/PlaylisterClub',
+                    { returnfields: 'Id,Name,Image,SpotifyArtistId,Email,UserType,Phone,EmailVerified,SMSNotify,PCAuthenticated' },
+                    // {returnfields: "Id,Name,Image,SpotifyArtistId,email,UserType,Phone,emailverified,smsnotify"},
+                    null,
+                );
+
+                if (typeof (userInfo.Id) !== 'undefined') {
+                    if (userInfo.UserType === 'artist') {
+                    const artistgenres = await this.getData('/data/pc/playlists/getartistmaingenres');
+                    userInfo.Genres = artistgenres.map(genre => this.toTitleCase(genre.Genre));
+                    }
+                    sessionStorage.setItem('current_user', JSON.stringify(userInfo));
+                    callback(userInfo);
+                } else {
+                    callback(emptyuser);
+                }
+                } catch (error) {
+                callback(emptyuser);
+                }
+            }
+            },
+            toTitleCase(str) {
+            return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+        },
+        async loadMusicGenres() {
+            const myv = this;
+            const musicGenresResponse = await this.getData(
+                '/data/pc/playlists/getmaingenres',
+                null,
+                null,
+            );
+            const genres = [];
+            musicGenresResponse.forEach((genre) => {
+                genres[genres.length] = genre.Genre;
+            });
+            myv.musicGenres = genres;
+            },
+            async getAppSettings() {
+            const appSettingsResponse = await this.getData('/data/pc/playlists/getappsettings', null, null);
+
+            const appSettings = {};
+            appSettingsResponse.forEach((itemsetting) => {
+                appSettings[itemsetting.ConfigKey] = itemsetting.Value;
+            });
+            this.appSettings = appSettings;
+            return appSettings;
+        },
+    }
 }
 </script>
 
